@@ -30,13 +30,14 @@ class Person{
       super(attrStud);
       this.previousBackground = attrStud.previousBackground;
       this.className = attrStud.className;
-      this.listsSubjects = attrStud.listsSubjects;  
+      this.listsSubjects = attrStud.listsSubjects; 
+      this.subject = attrStud.subject; 
     }
     PRAssignment(){
-      console.log(`${student.name} has submitted a PR for ${subject}!`);
+      return `${this.name} has submitted a PR for ${this.subject}!`;
     }
     sprintChallenge(){
-      return `${student.name} has begun sprint challenge on ${subject}`;
+      return `${this.name} has begun sprint challenge on ${this.subject}`;
     }
   }
   
@@ -47,26 +48,17 @@ class Person{
       this.favInstructor = attrPM.favInstructor;  
     }
     standUp(channel){
-      console.log(`${name} announces to ${channel}, @channel standy times!​​​​​`);
+      return `${this.name} announces to ${channel}, @channel standy times!`;
     }
     debugsCode(){
-      console.log(`${name} debugs ${student.name}'s code on ${subject}`);
+      console.log(`${this.name} debugs ${student.name}'s code on ${student.subject}`);
     }
   }
   
   
-  const instructShalini = new Instructor({
-  //from person
-    name: 'Shalini',
-    age: 50,
-    location: 'North Dakota',
-  //from instructor
-    specialty: 'Education',
-    favLanguage: 'Fortran',
-    catchPhrase: 'I rode dinosaurs to kindergarten!',
-  });
   
-  const instructVijay = new Instructor({
+  
+  const instruct = new Instructor({
   //from person
     name: 'Vijay',
     age: 39,
@@ -77,22 +69,9 @@ class Person{
     catchPhrase: 'Can you sign with all the colors of the wind?',
   });
   
-  const menteeAaron = new Student({
-    //from Person
-    name:'Aaron',
-    age:19,
-    location:'Missouri',
-    //from Instructor
-    previousBackground:'fisherman',
-    className:'Intro to stuff',
-    listsSubjects: {
-      sub1:'ti-83plus basics',
-      sub2:'reading menus',
-      sub3:'econ for people who don\'t know how to econ good',
-    },
-  });
   
-  const menteeJake = new Student({
+  
+  const student = new Student({
     //from Person
     name:'Jake',
     age:20,
@@ -105,9 +84,10 @@ class Person{
       sub2:'is is supposed to be a cold soup',
       sub3:'hatchet sharpening',
     },
+    subject:'HTML'
   });
   
-  const projmgrRoman = new ProjectManager({
+  const projmgr = new ProjectManager({
     //from Person
     name:'Roman',
     age:36,
@@ -125,37 +105,20 @@ class Person{
     favInstructor:'Vijay',
   });
       
-  const projmgrEd = new ProjectManager({
-    //from Person
-    name:'Ed',
-    age:63,
-    location:'Rhode Island',
-    //from Instructor
-    previousBackground:'Lumberjack',
-    className:'Minuets',
-    listsSubjects: {
-      sub1:'preheating an oven',
-      sub2:'snakes and ladders',
-      sub3:'competitive crochet',
-    },
-    //from Student
-    gradClassName:'tritons',
-    favInstructor:'Shalini',
-  });
-  
-  
-  console.log(instructShalini.name);
-  console.log(instructVijay.catchPhrase);
-  console.log(menteeJake.location);
-  console.log(menteeAaron.listsSubjects);
-  console.log(projmgrRoman.demo('basket weaving'));
   
   
   
-  // console.log(instructShalini.grade());
-  // console.log(instructShalini.PRAssignment());
-  // console.log(.standup());
-  // console.log(.sprintChallenge());
-  // console.log(.debugsCode());
+  console.log(instruct.name);
+  console.log(instruct.catchPhrase);
+  console.log(student.location);
+  console.log(student.listsSubjects);
+  console.log(projmgr.demo('basket weaving'));
+  console.log(instruct.grade(student.name,'geography'));
+  console.log(student.PRAssignment());
+  console.log(projmgr.debugsCode());
+  console.log(student.sprintChallenge());
+  console.log(projmgr.standUp('bumblebeeChamps!!'));
+  
+
   
   
