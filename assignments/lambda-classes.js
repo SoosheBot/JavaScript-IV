@@ -20,7 +20,7 @@ class Person{
       console.log(`Today, we are learning about ${subject}!`);
     }
     grade(student,subject){
-      console.log(`Did you know, ${student.name} received a perfect score on ${subject}?`);
+      console.log(`Did you know, ${student} received a perfect score on ${subject}?`);
     }
   }
   
@@ -33,10 +33,10 @@ class Person{
       this.listsSubjects = attrStud.listsSubjects;  
     }
     PRAssignment(){
-      console.log(`${student} has submitted a PR for ${subject}!`);
+      console.log(`${student.name} has submitted a PR for ${subject}!`);
     }
     sprintChallenge(){
-      return `${student} has begun sprint challenge on ${subject}`;
+      return `${student.name} has begun sprint challenge on ${subject}`;
     }
   }
   
@@ -150,10 +150,12 @@ class Person{
   console.log(menteeAaron.listsSubjects);
   console.log(projmgrRoman.demo('basket weaving'));
   
-    //things that don't work
-    // .sprintChallege
-    // .grade
-    // .standup
-    // .debugsCode
-    // .PRAssignment
-    // .standUp
+  
+  
+  // console.log(instructShalini.grade());
+  // console.log(instructShalini.PRAssignment());
+  // console.log(.standup());
+  // console.log(.sprintChallenge());
+  // console.log(.debugsCode());
+  
+  
